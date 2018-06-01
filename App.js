@@ -6,6 +6,7 @@ export default class App extends React.Component {
     return (
       <View style={styles.container}>
         <Text>Hey! this is my first app! I'm using React Native</Text>
+        <Text>HORRRAAAAAAAAAY</Text>
       </View>
     );
   }
