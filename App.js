@@ -7,6 +7,7 @@ export default class App extends React.Component {
       <View style={styles.container}>
         <Text>Hey! this is my first app! I'm using React Native</Text>
         <Text>HORRRAAAAAAAAAY!!!!!!!!!!!!!!</Text>
+        <Text>So love you, ibil! :)</Text>
       </View>
     );
   }
