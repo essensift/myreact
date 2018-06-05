@@ -1,6 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
 
+import ListItem from './src/component/ListView/ListItem';
+
 export default class App extends React.Component {
   
   state = {
@@ -26,7 +28,7 @@ export default class App extends React.Component {
   };
   
   render() {
-    const outputaaa = this.state.places.map((place, i) => (<Text key={i}>{place}</Text>));
+    const outputaaa = this.state.places.map((place, i) => (<ListItem key={i} placeName={place}/>));
     return (
       <View style={styles.container}>
         <Text>Hey! this is my first app! I'm using React Native</Text>
@@ -42,7 +44,7 @@ export default class App extends React.Component {
             onPress={this.btnaaa}
           />
         </View>
-        <View> 
+        <View style={{width: '100%'}}> 
           {outputaaa}
         </View>
       </View>
