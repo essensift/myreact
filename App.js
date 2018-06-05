@@ -3,13 +3,27 @@ import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
 
 export default class App extends React.Component {
   
-  place = '';
+  state = {
+    placeName: '',
+    places: []
+  }
+
+  placeChanged = val => {
+    this.setState({
+      placeName: val
+    })
+  }
 
   btnaaa = () => {
-    alert('aaa')
+    this.setState(prevState => {
+      return {
+        places: prevState.places.concat(prevState.placeName)
+      }
+    })
   }
   
   render() {
+    const outputaaa = this.state.places.map((place, i) => {<Text key={i}>{place}</Text>});
     return (
       <View style={styles.container}>
         <Text>Hey! this is my first app! I'm using React Native</Text>
@@ -19,11 +33,14 @@ export default class App extends React.Component {
           <TextInput
             style = {{width: '70%'}}
             placeholder = 'Text input here'
-            
+            onChangeText = {this.placeChanged}
           />
           <Button title='Add' style={{width: '30%'}}
             onPress={this.btnaaa}
           />
+        </View>
+        <View> 
+          {outputaaa}
         </View>
       </View>
     );
