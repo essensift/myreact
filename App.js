@@ -15,15 +15,18 @@ export default class App extends React.Component {
   }
 
   btnaaa = () => {
+    if (this.state.placeName.trim() === '')
+      return;
+
     this.setState(prevState => {
       return {
         places: prevState.places.concat(prevState.placeName)
-      }
-    })
-  }
+      };
+    });
+  };
   
   render() {
-    const outputaaa = this.state.places.map((place, i) => {<Text key={i}>{place}</Text>});
+    const outputaaa = this.state.places.map((place, i) => (<Text key={i}>{place}</Text>));
     return (
       <View style={styles.container}>
         <Text>Hey! this is my first app! I'm using React Native</Text>
