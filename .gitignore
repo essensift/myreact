@@ -7,7 +7,8 @@
 /node_modules
 
 #folders
-android/.gradle
+android/.gradle/
+android//.gradle
 android/build
 android/app/build/
 
