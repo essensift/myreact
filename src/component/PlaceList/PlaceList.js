@@ -6,7 +6,7 @@ import ListItem from '../ListItem/ListItem';
 const placeList = props => {
     return (
         <FlatList style={styles.listContainer} data={props.places} renderItem={(info) => (
-            <ListItem placeName={info.item.value} onPressed={() => props.onDeleteMethod(info.item.key)} />
+            <ListItem placeName={info.item.name} placeImage={info.item.image} onPressed={() => props.onDeleteMethod(info.item.key)} />
         )}/>
     );
 };
