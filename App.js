@@ -15,13 +15,23 @@ export default class App extends Component {
         places: prevState.places.concat(placeName)
       };
     });
-  };
+  }
+
+  placeDeleteHandle = index => {
+    this.setState(prevState => {
+      return {
+        places: prevState.places.filter((place, i) => {
+          return i !== index;
+        })
+      };
+    });
+  }
 
   render() {
     return (
       <View style={styles.container}>
         <PlaceInput onPlaceAdded={this.placeAddedHandler} />
-        <PlaceList places={this.state.places} />
+        <PlaceList places={this.state.places} onDeleteMethod={this.placeDeleteHandle} />
       </View>
     );
   }
