@@ -3,17 +3,18 @@ import { StyleSheet, View } from "react-native";
 
 import PlaceInput from "./src/component/PlaceInput/PlaceInput";
 import PlaceList from "./src/component/PlaceList/PlaceList";
-import placeImage from "./src/assets/hills.jpg"
 
 export default class App extends Component {
   state = {
     places: []
   };
 
+  placeImage = {uri: "http://gambar.batutimes.com/1479610107-amarta-hills-1-1.jpg"}
+
   placeAddedHandler = placeName => {
     this.setState(prevState => {
       return {
-        places: prevState.places.concat({ key: Math.random(), name: placeName, image:placeImage })
+        places: prevState.places.concat({ key: Math.random().toString(), name: placeName, image:this.placeImage })
       };
     });
   }
